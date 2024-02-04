@@ -1,0 +1,13 @@
+.terminos_section{
+    width: 100%;
+    background-color: rgb(241, 241, 241);
+}
+.terminos_container{
+    width: 60%;
+    padding: 50px;
+    margin: 0 auto;
+    
+}
+.terminos_container > p {
+    font-size: 18px;
+}

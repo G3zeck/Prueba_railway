@@ -1,0 +1,61 @@
+.main_container{
+    width: 100%;
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    height: 700px;
+}
+.reserva_container{
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 40px;
+    
+}
+.input_container{
+    display: flex;
+    width: 80%;
+    flex-wrap: wrap;
+    gap: 60px;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    padding: 20px;
+    padding-top: 70px;
+  
+}   
+.input{
+    color: white !important;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.input input{
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+}
+.select{
+    width: 200px;
+    height: 30px;
+    font-size: 16px;
+}
+.button_container{
+    display: grid;
+    align-content: center;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+.button{
+    width: 300px;
+    padding: 20px;
+    cursor: pointer;
+    color: white;
+    background-color: #EC8E00;
+    border-radius: 10px;
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+}

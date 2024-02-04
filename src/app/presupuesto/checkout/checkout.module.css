@@ -1,0 +1,100 @@
+.pago_section{
+    
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 40px;
+    gap: 20px;
+}
+.title{
+    width: 100%;
+    background-color: #EC8E00;
+    color: white;
+    font-size: 1em;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+    height: 60px;
+    text-align: center;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    
+}
+.contenedor_formularios_pago{
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.formulario_pago{
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+
+}
+.input_container{
+    display: flex;
+    gap: 40px;
+    width: 100%;
+    justify-content: space-around;
+    text-decoration: none;
+
+}
+.item_container{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+.item_container input {
+    width: 400px;
+    height: 30px;
+    border: none;
+    background-color: rgb(230, 230, 230);
+    border-radius: 5px;
+}
+.item_container label{
+    color: rgb(136, 135, 135);
+    padding-bottom: 6px;
+}
+.item_container select{
+    height: 40px;
+    width: 400px;
+}
+.item_container_check{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    padding: 20px;
+}
+.item_container_check input {
+    width: 20px;
+    height: 20px;
+}
+
+.informacion_pago{
+    flex: 1;
+    background-color: white;
+}
+.informacion_pago{
+    display: flex;
+    flex-direction: column;
+    
+}
+.datos{
+    padding: 0px 20px;
+}
+.imagen_auto{
+    padding: 10px 20px 10px 20px;
+}
+.imagen_auto img{
+    width: 100%;
+}
+.boton_reserva{
+    padding: 20px;
+    cursor: pointer;
+    border: none !important;
+    background-color: #EC8E00;
+    color: white !important;
+    font-size: 24px;
+    font-weight: 600;
+}
