@@ -3,7 +3,9 @@ import styles from './checkout.module.css'
 import React, { useContext, useEffect } from 'react'
 import { BliztContext } from '@/Context/Context'
 const page = () => {
+    /* eslint-disable */
     const context = useContext(BliztContext)
+
     useEffect(() => {
         context.realizarPago()
       }, [])

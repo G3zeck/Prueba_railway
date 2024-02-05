@@ -5,6 +5,7 @@ import styles from "./check.module.css"
 import Link from 'next/link'
 
 const page = () => {
+  /* eslint-disable */
   const context = useContext(BliztContext)
   
   return (

@@ -3,6 +3,12 @@ const app = express()
 const mysql = require('mysql')
 const cors = require('cors')
 const {MercadoPagoConfig, Preference } = require('mercadopago')
+import {MYSQLPASSWORD,
+    MYSQLPORT,
+    MYSQLUSER,
+    MYSQL_DATABASE,
+    MYSQLHOST
+ } from '../src/db'
 const accountSid = 'AC22f450d671da16549af8d965a403380f';
 const authToken = '6249685c181db2de16c6872c77f2c41f';
 const client = require('twilio')(accountSid, authToken);
@@ -17,10 +23,11 @@ app.use(
 );
 
 const db = mysql.createConnection({
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'blitz'
+    host: MYSQLHOST,
+    user: MYSQLUSER,
+    password: MYSQLPASSWORD,
+    database: MYSQL_DATABASE,
+    port: MYSQLPORT
 });
 
 db.connect(function (err){
