@@ -2,14 +2,18 @@ const express = require('express')
 const app = express()
 const mysql = require('mysql')
 const cors = require('cors')
+
+require('dotenv').config()
+
 const {MercadoPagoConfig, Preference } = require('mercadopago')
-import {MYSQLPASSWORD,
-    MYSQLPORT,
-    MYSQLUSER,
-    MYSQL_DATABASE,
-    MYSQLHOST
- } from '../src/db'
-const accountSid = 'AC22f450d671da16549af8d965a403380f';
+
+//  const MYSQLHOST = require('../src/db.js');
+//  const MYSQLPASSWORD = require('../src/db.js');
+//  const MYSQLPORT = require('../src/db.js');
+//  const MYSQLUSER = require('../src/db.js');
+//  const MYSQL_DATABASE = require('../src/db.js');
+
+ const accountSid = 'AC22f450d671da16549af8d965a403380f';
 const authToken = '6249685c181db2de16c6872c77f2c41f';
 const client = require('twilio')(accountSid, authToken);
 
@@ -18,16 +22,18 @@ app.use(express.json());
 app.use(
     cors({
         credentials: true,
-        origin: "http://localhost:3000",
+        origin: process.env.FRONT_END,
+
     })
 );
 
 const db = mysql.createConnection({
-    host: MYSQLHOST,
-    user: MYSQLUSER,
-    password: MYSQLPASSWORD,
-    database: MYSQL_DATABASE,
-    port: MYSQLPORT
+    host: `${process.env.MYSQLHOST}`,
+    user: `${process.env.MYSQLUSER}`,
+    password:`${process.env.MYSQLPASSWORD}`,
+    database:`${process.env.MYSQL_DATABASE}`,
+    port:`${process.env.MYSQLPORT}`
+    
 });
 
 db.connect(function (err){
@@ -194,9 +200,9 @@ app.post("/create-order", async (req, res) => {
                     }
                 ],
                 back_urls: {
-                    success: 'http://localhost:3000/success',
-                    failure: 'http://localhost:3000/failure',
-                    pending: 'http://localhost:3000/pending'
+                    success: process.env.FRONT_END +'/success',
+                    failure: process.env.FRONT_END +'/failure',
+                    pending: process.env.FRONT_END +'/pending'
                 },
                 auto_return: 'approved',
                 

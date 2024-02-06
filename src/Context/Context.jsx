@@ -47,7 +47,7 @@ const Context = ({children}) => {
     const [precioAutos, setPreciosAutos] = useState(0)
     
     const traer = () => {
-      Axios.get('http://localhost:1234/cars',{
+      Axios.get(`${process.env.NEXT_PUBLIC_BACK_END}`  + '/cars',{
         params:{
           fecha,
           fecha2,
@@ -66,7 +66,7 @@ const Context = ({children}) => {
     // }
 
       const guardarReserva = () => {
-        Axios.post ('http://localhost:1234/reserva',{
+        Axios.post (process.env.NEXT_PUBLIC_BACK_END  + '/reserva',{
           nombre:nombre,
           apellido:apellido,
           direccion:direccion,
@@ -92,17 +92,17 @@ const Context = ({children}) => {
         })
       }
 
-      const mostrarDatosReserva = () => {
-        Axios.get('http://localhost:1234/mostrarTabla').then((response) => {
+      // const mostrarDatosReserva = () => {
+      //   Axios.get('http://localhost:1234/mostrarTabla').then((response) => {
           
-          setDatosReserva(response.data)
-          console.log(datosReserva)
-        })
+      //     setDatosReserva(response.data)
+      //     console.log(datosReserva)
+      //   })
    
-      }
+      // }
 
       const realizarPago = () =>{
-        Axios.post('http://localhost:1234/create-order',{
+        Axios.post(`${process.env.NEXT_PUBLIC_BACK_END }` +'/create-order',{
           valorPago:precioAutos,
         }).then((response) => {
           const link = response.data
@@ -181,7 +181,7 @@ const Context = ({children}) => {
         direccion,
         setDireccion,
         guardarReserva,
-        mostrarDatosReserva,
+        // mostrarDatosReserva,
         datosReserva,
         realizarPago,
         url,
